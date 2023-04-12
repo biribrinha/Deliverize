@@ -1,0 +1,120 @@
+.App{
+  background-color:#F4F4F4;
+  height: 80px;
+}
+
+.menu{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+
+}
+
+.menu__container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.dropdow__menu{
+  width: 230px;
+  height: 48px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  margin-right: 24px;
+ 
+}
+
+.title__dropdow span{
+  color: #D80000;
+}
+
+.select__dropdow select{
+  border: none;
+  color: #656363;
+
+}
+
+.search__menu input{
+  background-color: #fff;
+  border: 1px solid #ED3237;
+  height: 48px;
+  width: 354px;
+  border-radius: 4px;
+  margin-right: 24px;
+
+}
+
+.login__menu{
+  display: flex;
+  margin-right: 24px;
+
+}
+
+.user__img{
+  cursor: pointer;
+}
+
+.button__login{
+  border: none;
+  color: #ED3237;
+  cursor: pointer;
+  background-color:#F4F4F4;
+
+}
+
+.cart__menu{
+  display: flex;
+}
+
+.cart__img{
+  cursor: pointer;
+}
+
+.cart__infos{
+  border: none;
+  color: #ED3237;
+  cursor: pointer;
+  background-color:#F4F4F4;
+
+}
+
+@media screen and (max-width: 992px){
+
+  .App{
+    background-color:#F4F4F4;
+    height: 180px;
+  }
+
+  .menu{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu__container{
+    display: flex;
+
+    margin: 30px;
+  
+  }
+
+  @media only screen and (max-width: 600px){
+
+    .App{
+      background-color:#F4F4F4;
+      height: 280px;
+    }
+    .menu{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu__container{
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+}
