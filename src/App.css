@@ -16,14 +16,15 @@
 .App{
   background-color:#F4F4F4;
   height: 80px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+
 }
 
 .menu{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px;
-
+  padding: 20px;
 }
 
 .menu__container{
@@ -65,6 +66,10 @@
   border-radius: 4px;
   margin-right: 24px;
 
+}
+
+.search__menu input::placeholder{
+  padding: 15px;
 }
 .entrarCarrinho{
   display: flex;
@@ -122,6 +127,9 @@
   height: 662px;
 }
 
+.container__1 img{
+  width: 597px;
+}
 .descricao__lanche h1{
   color: #4E4E4E;
   margin-top: 24px;
@@ -218,6 +226,8 @@
   text-align: center;
   justify-content: space-between;
 }
+
+
 
 #menos{
   width: 24px;
@@ -318,7 +328,10 @@
   cursor: pointer;
 }
 
+#adicionar__lanche__button:hover{
+  background:  #7a4411;
 
+}
 /*POPOVER*/
 
 .posicao__popover{
@@ -476,11 +489,12 @@
     flex-direction: column;
   }
 
+  .containers{
+    flex-wrap: wrap;
+  }
   .menu__container{
     display: flex;
-
     margin: 30px;
-  
   }
 
   @media only screen and (max-width: 600px){
@@ -508,5 +522,28 @@
     .search__menu input{
       margin-bottom: 24px;
     }
+
+    .container__1 img{
+      width: 497px;
+      display: flex;
+    }
+
+    .descricao__lanche h1{
+     text-align: start;
+    padding-left: 20px;
+
+    }
+    
+    .descricao__lanche p{
+      text-align: start;
+    padding-left: 20px;
+
+    }
+    
+    .preco__lanche{
+    width: 280px;
+    padding-left: 20px;
+    }
+    
   }
 }

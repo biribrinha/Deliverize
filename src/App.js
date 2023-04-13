@@ -82,11 +82,7 @@ function App() {
                   className="cart__infos">
                   Carrinho
                 </button>
-
-
               </div>
-
-
             </div>
           </div>
         </div>
@@ -111,15 +107,12 @@ function App() {
             </li>
 
             <li>
-              Molho Especial            
+              Molho Especial
             </li>
           </ul>
 
         </div>
       </div>
-
-
-
 
       <main>
         <div className="containers">
