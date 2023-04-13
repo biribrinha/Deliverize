@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 
 *{
@@ -6,6 +7,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --speed: 500ms;
 }
 
 .App{
@@ -115,9 +120,6 @@
   gap: 24px;
   width: 597px;
   height: 662px;
-}
-.descricao{
-
 }
 
 .descricao__lanche h1{
@@ -317,7 +319,152 @@
 }
 
 
+/*POPOVER*/
+
+.posicao__popover{
+  display: flex;
+  justify-content: end;
+  width: 1920px;
+  padding-right: 150px;
+}
+.dropdown-menu{
+  position: fixed;
+  background-color: #fff;
+
+  width: 208px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  filter: drop-shadow(0px -1px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 4px;
+}
+
+
+
+
+
+
+
+.bolinha__notificacao{
+  content: '';
+  position: absolute;
+  padding: 0 20px ;
+  margin-bottom: 5px;
+
+}
+
+.bolinha__notificacao.inactive{
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--speed) ease;
+}
+
+.bolinha__notificacao::before{
+  content: '';
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+
+
+.dropdown-menu::before{
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  transform: rotate(45deg);
+}
+
+
+
+.dropdown-menu.inactive{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: var(--speed) ease;
+}
+
+
+.cabecalho__popover{
+  padding: 9px;
+  width: 100%;
+  background: #F09035;
+  color: #FFFFFF;
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+}
+
+.posicao__popover ul {
+  padding-left: 25px;
+}
+
+
+.posicao__popover h3{
+  padding: 9px;
+  color: #BC2E31;
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.posicao__popover p{
+  padding-left: 10px;
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+
+}
+
+.posicao__popover ul{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.posicao__popover li{
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  color: #4E4E4E;
+}
+
+
+
+@media screen and (max-width: 1700px){
+  .posicao__popover{
+    position: absolute;
+    width: 1600px;
+    padding-left: 150px;
+  }
+}
+
+@media screen and (max-width: 1300px){
+  .posicao__popover{
+    position: absolute;
+    width: 1300px;
+    padding-left: 150px;
+  }
+}
+
+
 @media screen and (max-width: 992px){
+
+  .posicao__popover{
+    position: absolute;
+    width: 1020px;
+  }
 
   .App{
     background-color:#F4F4F4;

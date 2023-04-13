@@ -1,16 +1,39 @@
-import { React, useState } from "react";
+import React, { useState, useEffect, useRef } from 'react';
 import logo from './imagens/DeliverizeLogo.svg';
 import user from './imagens/user.png';
 import carrinho from './imagens/cart.png';
 import lanche from './imagens/lanche.png';
+import notificacao from './imagens/notificacao.png';
 import './App.css';
+import Popover from '@mui/material/Popover';
+import Typography from '@mui/material/Typography';
+import { Button } from "@mui/material/Button";
 
 function App() {
+
+  const [open, setOpen] = useState(false);
+
+  let menuRef = useRef();
+
+  useEffect(() => {
+    let handler = (e) => {
+      if (!menuRef.current.contains(e.target)) {
+        setOpen(false);
+        console.log(menuRef.current);
+      }
+    };
+
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    }
+
+  });
   return (
     <div className="App">
       <header>
         <div className="menu">
-
 
           <img src={logo} className="App-logo" alt="logo" />
 
@@ -50,16 +73,53 @@ function App() {
               </div>
 
               <div className="cart__menu">
+                <div className={`bolinha__notificacao ${open ? 'active' : 'inactive'}`} >
+                  <img src={notificacao} className="notificacao__img" alt="notificacao de compra" />
+
+                </div>
                 <img src={carrinho} className="cart__img" alt="ícone do carrinho de compras" />
                 <button
                   className="cart__infos">
                   Carrinho
                 </button>
+
+
               </div>
+
+
             </div>
           </div>
         </div>
       </header>
+
+      <div className="posicao__popover">
+        <div className={`dropdown-menu ${open ? 'active' : 'inactive'}`} >
+          <span className="cabecalho__popover">Adicionado com Sucesso</span>
+          <h3>Oferta Cheddar Bacon</h3>
+          <p>Ingredientes:</p>
+          <ul>
+            <li>
+              1 Carne 250gr
+            </li>
+
+            <li>
+              2 Queijo Cheddar
+            </li>
+
+            <li>
+              1 Bacon
+            </li>
+
+            <li>
+              Molho Especial            
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+
+
 
       <main>
         <div className="containers">
@@ -165,7 +225,7 @@ function App() {
 
 
             <div className="rodape">
-            <div className="linha__container"></div>
+              <div className="linha__container"></div>
 
               <div className="rodape__ingredientes">
                 <span>Precisa de Talher?</span>
@@ -178,12 +238,17 @@ function App() {
                   <p className="quantidade__ingredientes">0</p>
                   <input type="button" name="mais" id="mais" value="" />
                 </div>
-
-                <div className="adicionar__lanche">
-                <input type="button" name="adicionar" id="adicionar__lanche__button" value="adicionar" />
+                <div className='menu-container' ref={menuRef}>
+                  <div className="adicionar__lanche" onClick={() => { setOpen(!open) }}>
+                    <input type="button" name="adicionar" id="adicionar__lanche__button" value="adicionar" />
+                  </div>
                 </div>
               </div>
             </div>
+
+
+
+
 
 
 
@@ -191,6 +256,16 @@ function App() {
         </div>
       </main>
     </div>
+  );
+}
+
+
+function DropdownItem(props) {
+  return (
+    <li className='dropdownItem'>
+      <img src={props.img}></img>
+      <a> {props.text} </a>
+    </li>
   );
 }
 
