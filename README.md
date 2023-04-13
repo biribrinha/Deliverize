@@ -8,4 +8,6 @@ https://deliverize-igvbmvtma-biribrinha.vercel.app/
 
 Sou uma pessoa muito empolgada e apaixonada por frontend, obrigada pela oportunidade!
 
-![Alt Text](https://giphy.com/gifs/computer-working-cat-LHZyixOnHwDDy)
+![Alt Text](https://media.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.gif)
+
+
